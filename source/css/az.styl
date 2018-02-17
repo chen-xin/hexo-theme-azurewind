@@ -1,0 +1,112 @@
+sider-width = 400px
+header-height = 200px
+base-font = 18px sans-serif
+base-color = Black
+article-padding = 10px
+
+card-shadow = 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)      
+
+font-mono = mono
+font-size = 18px
+line-height = 1.8em
+
+body
+  background-color: Cornsilk
+  color: base-color
+  margin: 0
+  font: base-font
+
+a
+  color: base-color
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    
+#header
+  background-color: Lightgray
+  height: header-height
+
+#content
+  margin-right: sider-width
+  .content
+    padding: 10px
+    .post
+      box-shadow: card-shadow
+      margin: 40px 0
+      padding: 10px 20px
+      .post-header
+        .post-title
+          font-size: 2em
+          font-weight: bold
+          border-bottom: inset
+        .post-meta
+          display: flex
+          .post-meta-group
+            padding: 0 10px
+            a
+              padding: 0 5px
+      .post-content
+        h1
+          font-size: 1.6em
+          line-height: 1em
+        h2
+          font-size: 1.4em
+          line-height: 1em
+        h3
+          font-size: 1.2em
+          line-height: 1em
+        h4, h5, h6
+          font-size: 1em
+          line-height: 1em
+  
+#sider
+  background-color: Whitesmoke
+  position: fixed
+  top: 0
+  right: 0
+  height: 100%
+  width: sider-width
+  .sider
+    padding: 20px
+    .side-widget
+      padding: 10px 0
+      span[class$="list-count"]
+        &:before
+          content: ' ('
+        &:after
+          content: ')'
+      .side-widget-topnav
+        display: flex
+        justify-content: space-around
+        a
+          display: inline-block
+          margin: 5px 5px
+          padding: 5px 5px
+          flex-grow: 1
+          background-color: Lightgray
+
+      .widget>ul
+        list-style-type: none
+        margin: 0
+        padding: 0
+        ul
+          list-style-type: none
+          margin: 0
+          padding-left: 1em
+      .widget>ul.tag-list
+        display: flex
+        flex-wrap: wrap
+        li
+          margin: 2px 10px 2px 0
+
+      .widget-title
+        font-size: 1.2em
+        font-weight: bold
+        border-bottom: inset
+      .side-widget-search
+        input#search-site
+          width: 100%
+          box-sizing: border-box
+
+@import highlight
+
