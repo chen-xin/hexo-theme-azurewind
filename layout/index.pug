@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content=config.description)
+    link(rel="stylesheet" type="text/css" href="/css/az.css")
+  body
+    #header
+      .header
+        .site-title
+          != config.title
+        .site-subtitle
+          != config.subtitle
+
+    #content
+      .content
+        for post in page.posts.toArray()
+          .post
+            .post-header
+              .post-title
+                a.title(href=url_for(post.path))
+                  != post.title
+              .post-meta
+                .post-meta-group
+                  != full_date(post.date)
+                .post-meta-group
+                  for tag in post.tags.toArray()
+                    a(href=url_for(tag.path))= tag.name
+            .post-content
+              if post.excerpt
+                != post.excerpt
+              else
+                != post.content
+            .post-footer <---------->
+
+    #sider
+      .sider
+        .side-widget
+          .side-widget-topnav
+            a(href=url_for(config.root)) Home
+            a(href=url_for(theme.about)) About
+            a(href=url_for(theme.rss)) RSS
+
+        .side-widget
+          .side-widget-search
+            input#search-site(placeholder="Search...")
+
+        if site.categories.length
+          .side-widget
+            .side-widget-list
+              .widget-title #{ __('categories') }
+              .widget
+                != list_categories({show_count: true})
+
+        if site.tags.length
+          .side-widget
+            .side-widget-list
+              .widget-title #{ __('tags') }
+              .widget
+                != list_tags({show_count: true})
+
+        .side-widget
+          .side-widget-list
+            .widget-title #{ __('archives') }
+            .widget
+              != list_archives({show_count: true})
+
