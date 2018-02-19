@@ -1,13 +1,13 @@
-sider-width = 400px
+sider-width = 300px
 header-height = 200px
-base-font = 18px sans-serif
+base-font = 16px sans-serif
 base-color = Black
 article-padding = 10px
 
 card-shadow = 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)      
 
 font-mono = mono
-font-size = 18px
+font-size = 16px
 line-height = 1.8em
 
 body
@@ -67,46 +67,52 @@ a
   height: 100%
   width: sider-width
   .sider
-    padding: 20px
+    padding: 10px 20px
     .side-widget
       padding: 10px 0
+      .widget-title
+        font-size: 1.2em
+        font-weight: bold
+        border-bottom: inset
+
+      .side-widget-topnav
+        display: flex
+        justify-content: space-around
+        height: 2em
+        a
+          display: inline-block
+          text-align: center
+          flex-grow: 1
+          &:hover
+            text-decoration: none
+            border-bottom: inset
+
+      .side-widget-search
+        input#search-site
+          width: 100%
+          box-sizing: border-box
+          
       span[class$="list-count"]
         &:before
           content: ' ('
         &:after
           content: ')'
-      .side-widget-topnav
-        display: flex
-        justify-content: space-around
-        a
-          display: inline-block
-          margin: 5px 5px
-          padding: 5px 5px
-          flex-grow: 1
-          background-color: Lightgray
 
-      .widget>ul
+      ul
         list-style-type: none
         margin: 0
         padding: 0
+
+      ul.category-list, ul.archive
         ul
-          list-style-type: none
-          margin: 0
           padding-left: 1em
-      .widget>ul.tag-list
+
+      ul.tag-list
         display: flex
         flex-wrap: wrap
         li
           margin: 2px 10px 2px 0
 
-      .widget-title
-        font-size: 1.2em
-        font-weight: bold
-        border-bottom: inset
-      .side-widget-search
-        input#search-site
-          width: 100%
-          box-sizing: border-box
 
 @import highlight
 
