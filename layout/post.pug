@@ -1,0 +1,16 @@
+extends _layout.pug
+include _post.pug
+
+block content
+  .post
+    +post_header(page)
+    .post-content
+      != page.content
+
+block side-toc
+  .side-widget
+    .side-widget-toc
+      .widget-title #{ __('toc') }
+      .widget
+        != toc(page.content, {list_number: true})
+

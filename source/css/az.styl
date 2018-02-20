@@ -31,7 +31,7 @@ a
   .content
     padding: 10px
     .post
-      box-shadow: card-shadow
+      // box-shadow: card-shadow
       margin: 40px 0
       padding: 10px 20px
       .post-header
@@ -98,13 +98,13 @@ a
         &:after
           content: ')'
 
-      ul
+      ul, ol
         list-style-type: none
         margin: 0
         padding: 0
 
-      ul.category-list, ul.archive
-        ul
+      ul.category-list, ul.archive, ol
+        ul, ol
           padding-left: 1em
 
       ul.tag-list
@@ -113,6 +113,31 @@ a
         li
           margin: 2px 10px 2px 0
 
+h1.archive-group
+  border-bottom: inset
 
+.archive-post-list
+  .post-title
+    padding-top: 20px
+    font-size: 1.2em  
+    font-weight: bold
+  .post-meta
+    display: inline-flex
+    .post-meta-group
+      padding: 0 10px
+      a
+        padding: 0 5px
+
+nav.page-navigator
+  // float: right
+
+  span, a
+    display: inline-block
+    padding: 5px 10px
+    margin: 5px
+    border: solid 1px
+  a
+    background-color: Wheat
+    
 @import highlight
 
