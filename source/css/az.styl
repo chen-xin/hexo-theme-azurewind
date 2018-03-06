@@ -1,13 +1,13 @@
 sider-width = 300px
 header-height = 200px
-base-font = 16px sans-serif
+base-font = 12px sans-serif
 base-color = Black
 article-padding = 10px
 
 card-shadow = 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)      
 
 font-mono = mono
-font-size = 16px
+font-size = 12px
 line-height = 1.8em
 
 body
@@ -21,17 +21,37 @@ a
   text-decoration: none
   &:hover
     text-decoration: underline
-    
+
 #header
-  background-color: Lightgray
+  background: linear-gradient(to bottom, #336699 0%, #0099ff 100%)
+  color: Azure
   height: header-height
+  .site-title
+    padding: 30px 0 0 200px
+    .title-main
+      font-size: 3em
+    .title-sub
+      padding-left: 1em
+      font-size: 1.5em
+
+#content-wrapper
+  display: flex
+  justify-content: center
+
+.affix
+  #content
+    margin-right: sider-width
+  #sider
+    position: fixed
+    top: 0
+    right: 0
+
 
 #content
-  margin-right: sider-width
+  width: 800px
   .content
-    padding: 10px
+    padding: 10px 20px
     .post
-      // box-shadow: card-shadow
       margin: 40px 0
       padding: 10px 20px
       .post-header
@@ -61,9 +81,7 @@ a
   
 #sider
   background-color: Whitesmoke
-  position: fixed
-  top: 0
-  right: 0
+  margin-top: 10px
   height: 100%
   width: sider-width
   .sider

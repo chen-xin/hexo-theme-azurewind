@@ -9,4 +9,5 @@ block content
         if post.excerpt
           != post.excerpt
         else
-          != post.content
+          != post.content.slice(0, (post.content.search(/(<\/p>|<\/figure>)/) || post.content.length) + 4)
+          // != post.content
