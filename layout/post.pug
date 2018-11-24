@@ -39,6 +39,6 @@ html
           .side-widget-toc
             .widget-title #{ __('toc') }
             .widget
-              != toc(page.content, {list_number: false})
+              != toc(page.content, {list_number: true})
 
-  script(src="/js/az.js")
+    include parts/gotopButton 

@@ -13,7 +13,7 @@ highlight-blue = #6699cc
 highlight-purple = #cc99cc
 
 // overwrite default theme
-highlight-background = Ivory
+highlight-background = #f0f0f0
 highlight-current-line = #393939
 highlight-selection = #515151
 highlight-foreground = #555
@@ -26,6 +26,8 @@ highlight-aqua = #66cccc
 highlight-blue = #6699cc
 highlight-purple = DodgerBlue
 
+font-size = 9px
+
 $code-block
   background: highlight-background
   margin: 0 article-padding * -1
@@ -36,7 +38,7 @@ $code-block
   overflow: auto
   color: highlight-foreground
   line-height: 1.2em
-  font-size: 0.9em
+  font-size: font-size //0.9em
   line-height: font-size * line-height
 
 $line-numbers

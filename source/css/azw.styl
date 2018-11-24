@@ -1,11 +1,20 @@
+//////////////////////////////////////////////////////
+// 
+// constants
+// 
+//////////////////////////////////////////////////////
 header-height=200px
 sider-width=300px
 content-width=800px
 base-font=16px Verdana, Geneva, sans-serif
 line-height=1.6em
-font-size = 16px
 article-padding = 10px
 
+//////////////////////////////////////////////////////
+// 
+// header
+// 
+//////////////////////////////////////////////////////
 html
   margin: 0
 
@@ -13,25 +22,22 @@ body
   margin: 0
   font: base-font
   line-height: line-height
+  color: #303030
   
-figure
-  overflow-x: scroll
-  background-color: #f0f0f0
-  padding: 0
-  margin: 0
-  td.gutter
-    background-color: lightGray
-    text-align: right
-    padding: 0 0.5em
-    
 #header
   height: header-height
   
 .site-title
   padding-top: 1em
   text-align: center
-  font-size: 60px
+  font-size: 40px
   font-weight: bold
+
+.site-subtitle
+  padding-top: 1em
+  text-align: center
+  font-weight: bold
+
   
 .post-title
   font-size: 40px
@@ -59,6 +65,11 @@ ul.title-menu
     padding: 0 1em
 
 
+//////////////////////////////////////////////////////
+// 
+// content
+// 
+//////////////////////////////////////////////////////
 #content-wrapper
   display: flex
   justify-content: center
@@ -91,18 +102,23 @@ a.nav, a.category-list-link, a.tag-list-link, a.archive-list-link, a.toc-link
 
 .post-meta
   display: flex
-  color: dimGray
+  color: Gray
 
 .post-date
   padding-right: 2em
 
 
 .tag
-  border-left: dotted 1px
+  border-left: 1px dotted lightGray
   padding: 0 0.2em
   &:last-child
-    border-right: dotted 1px 
+    border-right: 1px dotted lightGray
 
+//////////////////////////////////////////////////////
+// 
+// sider
+// 
+//////////////////////////////////////////////////////
 #side-nav
   padding: 0.5em
 
@@ -115,6 +131,14 @@ a.nav, a.category-list-link, a.tag-list-link, a.archive-list-link, a.toc-link
   font-size: 0.9em
   list-style: none
   padding-left: 0.5em
+
+
+ol.toc, ol.toc-child
+  list-style: none
+  padding-left: 0
+  li
+    text-indent: -1em
+    padding-left: 1.5em
 
 ul.tag-list
   font-size: 0.9em
@@ -131,6 +155,11 @@ span[class$="list-count"]
   &:after
     content: ')'
 
+//////////////////////////////////////////////////////
+// 
+// page navigator
+// 
+//////////////////////////////////////////////////////
 nav.page-navigator
   span, a
     display: inline-block
@@ -139,6 +168,40 @@ nav.page-navigator
     border: solid 1px
   a
     background-color: Wheat
+
+//////////////////////////////////////////////////////
+// 
+// code highlight    
+// 
+//////////////////////////////////////////////////////
+figure
+  border-left: 5px solid #6699ff
+  overflow-x: scroll
+  background-color: #f0
+  padding: 0
+  margin: 0
+  td.gutter
+    text-align: right
+    color: lightGray
+    padding: 0 0.5em
+    border-right: double lightGray
+    
+#gotopButton
+  display: none
+  height: 3em
+  width: 3em
+  position: fixed
+  bottom: 20px
+  right: 60px
+  z-index: 99
+  border: none
+  outline: none
+  background-color: steelBlue
+  color: white
+  cursor: pointer
+  border-radius: 50%
+  font-weight: bold
+  transform: rotate(-90deg)
     
 @import highlight
 // hexo generated element styles

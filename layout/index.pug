@@ -20,6 +20,8 @@ html
           input#search-site(placeholder="Search...")
       .site-title
         != config.title
+      .site-subtitle
+        != config.subtitle
 
     #content-wrapper
       #content
@@ -60,4 +62,4 @@ html
           .widget
             != list_archives({show_count: true})
 
-  script(src="/js/az.js")
+    include parts/gotopButton 
