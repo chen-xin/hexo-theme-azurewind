@@ -1,16 +1,45 @@
-extends _layout.pug
-include _post.pug
 
-block content
-  .post
-    +post_header(page)
-    .post-content
-      != page.content
+doctype html
+html
+  head
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content=config.description)
+    link(rel="stylesheet" type="text/css" href="/css/azw.css")
+  body
+    #header
+      ul.title-menu
+        li
+          a.nav(href=url_for(config.root)) Home
+        li
+          a.nav(href=url_for("tags")) Tags
+        li
+          a.nav(href=url_for("categories")) Category
+        li
+          a.nav(href=url_for("archives")) Archive
+        li
+          input#search-site(placeholder="Search...")
+      .post-header-wrapper
+        .post-header
+          .post-title
+            != page.title
+          .post-meta
+            .post-date
+              != full_date(page.date)
+            .post-tag
+              for tag in page.tags.toArray()
+                a.nav.tag(href=url_for(tag.path))= tag.name
+    hr
+    #content-wrapper
+      #content
+        != page.content
 
-block side-toc
-  .side-widget
-    .side-widget-toc
-      .widget-title #{ __('toc') }
-      .widget
-        != toc(page.content, {list_number: true})
+      #side-nav
+        .sider
+          .side-widget
+            .side-widget-toc
+              .widget-title #{ __('toc') }
+              .widget
+                != toc(page.content, {list_number: false})
 
+  script(src="/js/az.js")
