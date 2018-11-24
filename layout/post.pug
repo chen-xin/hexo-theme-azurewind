@@ -35,11 +35,10 @@ html
         != page.content
 
       #side-nav
-        .sider
-          .side-widget
-            .side-widget-toc
-              .widget-title #{ __('toc') }
-              .widget
-                != toc(page.content, {list_number: false})
+        .side-widget
+          .side-widget-toc
+            .widget-title #{ __('toc') }
+            .widget
+              != toc(page.content, {list_number: false})
 
   script(src="/js/az.js")
