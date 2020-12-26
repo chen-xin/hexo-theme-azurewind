@@ -4,7 +4,7 @@
 // 
 //////////////////////////////////////////////////////
 header-height=200px
-sider-width=0 //300px
+sider-width=300px
 content-width=800px
 base-font=16px Verdana, Geneva, sans-serif
 line-height=1.6em
@@ -16,53 +16,57 @@ font-size = 14px
 // 
 //////////////////////////////////////////////////////
 html
-  margin: 0
+    margin: 0
 
 body
-  margin: 0
-  font: base-font
-  line-height: line-height
-  color: #303030
-  
+    margin: 0
+    font: base-font
+    line-height: line-height
+    color: #303030
+
+img
+    width: 100%
+    height: auto
+    
 #header
-  height: header-height
-  
+    height: header-height
+    
 .site-title
-  padding-top: 1em
-  text-align: center
-  font-size: 40px
-  font-weight: bold
+    padding-top: 1em
+    text-align: center
+    font-size: 40px
+    font-weight: bold
 
 .site-subtitle
-  padding-top: 1em
-  text-align: center
-  font-weight: bold
+    padding-top: 1em
+    text-align: center
+    font-weight: bold
 
-  
+    
 .post-title
-  font-size: 40px
-  font-weight: bold
-  line-height: 1.2em
+    font-size: 40px
+    font-weight: bold
+    line-height: 1.2em
 
 .post-header-wrapper
-  display: flex
-  justify-content: center
-  align-items: flex-end
-  .post-header
-    width: 1100px
-    .post-meta
-      padding-top: 2em
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    .post-header
+        width: 1100px
+        .post-meta
+            padding-top: 2em
 
 .post-header
-  padding-bottom: 2em
+    padding-bottom: 2em
 
 ul.title-menu
-  display: flex
-  justify-content: center
-  list-style: none
-  color: dimGray
-  li
-    padding: 0 1em
+    display: flex
+    justify-content: center
+    list-style: none
+    color: dimGray
+    li
+        padding: 0 1em
 
 
 //////////////////////////////////////////////////////
@@ -71,49 +75,49 @@ ul.title-menu
 // 
 //////////////////////////////////////////////////////
 #content-wrapper
-  display: flex
-  justify-content: center
+    display: flex
+    justify-content: center
 
 #content
-  width: content-width
-  padding: 0.5em
+    width: content-width
+    padding: 0.5em
 
 #side-nav
-  display:none
-  background-color: #F8F8F8 
-  width: sider-width
+    display:none
+    background-color: #F8F8F8 
+    width: sider-width
 
 li.index
-  padding: 2em 0.5em
-  list-style-type: none
-  
+    padding: 2em 0.5em
+    list-style-type: none
+    
 li.toc-item
-  padding-bottom: 0.5em
-  
+    padding-bottom: 0.5em
+    
 .index-title
-  padding: 0.5em 0
-  font-size: 1.5em
+    padding: 0.5em 0
+    font-size: 1.5em
 
 a.nav, a.category-list-link, a.tag-list-link, a.archive-list-link, a.toc-link
-  text-decoration: none
-  color: inherit
-  margin: 0 2px
-  &:hover
-    border-bottom: inset
+    text-decoration: none
+    color: inherit
+    margin: 0 2px
+    &:hover
+        border-bottom: inset
 
 .post-meta
-  display: flex
-  color: Gray
+    display: flex
+    color: Gray
 
 .post-date
-  padding-right: 2em
+    padding-right: 2em
 
 
 .tag
-  border-left: 1px dotted lightGray
-  padding: 0 0.2em
-  &:last-child
-    border-right: 1px dotted lightGray
+    border-left: 1px dotted lightGray
+    padding: 0 0.2em
+    &:last-child
+        border-right: 1px dotted lightGray
 
 //////////////////////////////////////////////////////
 // 
@@ -121,40 +125,39 @@ a.nav, a.category-list-link, a.tag-list-link, a.archive-list-link, a.toc-link
 // 
 //////////////////////////////////////////////////////
 #side-nav
-  padding: 0.5em
+    padding: 0.5em
 
 .widget-title
-  font-weight: bold
-  border-bottom: inset
-
+    font-weight: bold
+    border-bottom: inset
 
 .category-list, .category-list-child, .archive-list
-  font-size: 0.9em
-  list-style: none
-  padding-left: 0.5em
+    font-size: 0.9em
+    list-style: none
+    padding-left: 0.5em
 
 
 ol.toc, ol.toc-child
-  list-style: none
-  padding-left: 0
-  li
-    text-indent: -1em
-    padding-left: 1.5em
+    list-style: none
+    padding-left: 0
+    li
+        text-indent: -1em
+        padding-left: 1.5em
 
 ul.tag-list
-  font-size: 0.9em
-  padding-left: 0.5em
-  list-style: none
-  display: flex
-  flex-wrap: wrap
-  li
-    margin: 2px 10px 2px 0
+    font-size: 0.9em
+    padding-left: 0.5em
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    li
+        margin: 2px 10px 2px 0
 
 span[class$="list-count"]
-  &:before
-    content: ' ('
-  &:after
-    content: ')'
+    &:before
+        content: ' ('
+    &:after
+        content: ')'
 
 //////////////////////////////////////////////////////
 // 
@@ -162,50 +165,58 @@ span[class$="list-count"]
 // 
 //////////////////////////////////////////////////////
 nav.page-navigator
-  span, a
-    display: inline-block
-    padding: 5px 10px
-    margin: 5px
-    border: solid 1px
-  a
-    background-color: Wheat
+    span, a
+        display: inline-block
+        padding: 5px 10px
+        margin: 5px
+        border: solid 1px
+    a
+        background-color: Wheat
 
 //////////////////////////////////////////////////////
 // 
-// code highlight    
+// code highlight        
 // 
 //////////////////////////////////////////////////////
 figure
-  border-left: 5px solid #6699ff
-  overflow-x: scroll
-  background-color: #f0
-  font-size: font-size
-  line-height: 1.5em
-  padding: 0
-  margin: 0
-  td.gutter
-    text-align: right
-    color: lightGray
-    padding: 0 0.5em
-    border-right: double lightGray
-    
+    border-left: 5px solid #6699ff
+    overflow-x: scroll
+    background-color: #f0
+    font-size: font-size
+    line-height: 1.5em
+    padding: 0
+    margin: 0
+    td.gutter
+        text-align: right
+        color: lightGray
+        padding: 0 0.5em
+        border-right: double lightGray
+        
 #gotopButton
-  display: none
-  height: 3em
-  width: 3em
-  position: fixed
-  bottom: 20px
-  right: 60px
-  z-index: 99
-  border: none
-  outline: none
-  background-color: steelBlue
-  color: white
-  cursor: pointer
-  border-radius: 50%
-  font-weight: bold
-  transform: rotate(-90deg)
+    display: none
+    height: 3em
+    width: 3em
+    position: fixed
+    bottom: 20px
+    right: 60px
+    z-index: 99
+    border: none
+    outline: none
+    background-color: steelBlue
+    color: white
+    cursor: pointer
+    border-radius: 50%
+    font-weight: bold
+    transform: rotate(-90deg)
     
+@media only screen and (max-width: 800px)
+    body
+        background-color: lightblue
+    #content
+        width: 95%
+    #header
+        width: 95%
+
 @import highlight
 // hexo generated element styles
 
