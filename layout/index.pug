@@ -1,23 +1,9 @@
 doctype html
 html
-    head
-        meta(http-equiv="content-type" content="text/html; charset=utf-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        meta(name="description" content=config.description)
-        link(rel="stylesheet" type="text/css" href="/css/azw.css")
+    include parts/head.pug
     body
         #header
-            ul.title-menu
-                li
-                    a.nav(href=url_for(config.root)) Home
-                li
-                    a.nav(href=url_for("tags")) Tags
-                li
-                    a.nav(href=url_for("categories")) Category
-                li
-                    a.nav(href=url_for("archives")) Archive
-                // li
-                    // input#search-site(placeholder="Search...")
+            include parts/mainMenu.pug
             .site-title
                 != config.title
             .site-subtitle

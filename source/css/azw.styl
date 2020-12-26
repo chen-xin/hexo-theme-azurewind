@@ -32,7 +32,7 @@ img
     height: header-height
     
 .site-title
-    padding-top: 1em
+    padding-top: 3em
     text-align: center
     font-size: 40px
     font-weight: bold
@@ -44,6 +44,7 @@ img
 
     
 .post-title
+    padding-top: 1em
     font-size: 40px
     font-weight: bold
     line-height: 1.2em
@@ -53,7 +54,7 @@ img
     justify-content: center
     align-items: flex-end
     .post-header
-        width: 1100px
+        width: 90%
         .post-meta
             padding-top: 2em
 
@@ -210,12 +211,15 @@ figure
     transform: rotate(-90deg)
     
 @media only screen and (max-width: 800px)
-    body
-        background-color: lightblue
     #content
         width: 95%
-    #header
-        width: 95%
+
+    // since the .post-header style was defined under .post-header-wrapper, 
+    // we have to also specify this cascade to overwrite it. This may be a 
+    // bug or feather of css
+    .post-header-wrapper
+        .post-header
+            width: 95%
 
 @import highlight
 // hexo generated element styles
