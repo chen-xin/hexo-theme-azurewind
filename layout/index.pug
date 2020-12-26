@@ -1,65 +1,65 @@
 doctype html
 html
-  head
-    meta(http-equiv="content-type" content="text/html; charset=utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    meta(name="description" content=config.description)
-    link(rel="stylesheet" type="text/css" href="/css/azw.css")
-  body
-    #header
-      ul.title-menu
-        li
-          a.nav(href=url_for(config.root)) Home
-        li
-          a.nav(href=url_for("tags")) Tags
-        li
-          a.nav(href=url_for("categories")) Category
-        li
-          a.nav(href=url_for("archives")) Archive
-        li
-          input#search-site(placeholder="Search...")
-      .site-title
-        != config.title
-      .site-subtitle
-        != config.subtitle
+    head
+        meta(http-equiv="content-type" content="text/html; charset=utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="description" content=config.description)
+        link(rel="stylesheet" type="text/css" href="/css/azw.css")
+    body
+        #header
+            ul.title-menu
+                li
+                    a.nav(href=url_for(config.root)) Home
+                li
+                    a.nav(href=url_for("tags")) Tags
+                li
+                    a.nav(href=url_for("categories")) Category
+                li
+                    a.nav(href=url_for("archives")) Archive
+                // li
+                    // input#search-site(placeholder="Search...")
+            .site-title
+                != config.title
+            .site-subtitle
+                != config.subtitle
 
-    #content-wrapper
-      #content
-        .content
-          ul
-            for post in page.posts.toArray()
-              li.index
-                .index-title
-                  a.nav(href=url_for(post.path))
-                    != post.title
-                .post-meta
-                  .post-date
-                    != full_date(post.date)
-                  .post-tag
-                    for tag in post.tags.toArray()
-                      a.nav.tag(href=url_for(tag.path))= tag.name
-        .content-footer
-          block content-footer
-            if page.next || page.prev
-              nav.page-navigator
-                != paginator({prev_text: __('previous'), next_text: __('next')})
+        #content-wrapper
+            #content
+                .content
+                    ul
+                        for post in page.posts.toArray()
+                            li.index
+                                .index-title
+                                    a.nav(href=url_for(post.path))
+                                        != post.title
+                                .post-meta
+                                    .post-date
+                                        != full_date(post.date)
+                                    .post-tag
+                                        for tag in post.tags.toArray()
+                                            a.nav.tag(href=url_for(tag.path))= tag.name
+                .content-footer
+                    block content-footer
+                        if page.next || page.prev
+                            nav.page-navigator
+                                != paginator({prev_text: __('previous'), next_text: __('next')})
 
-      #side-nav
-        if site.categories.length
-          .side-widget
-            .widget-title #{ __('categories') }
-            .widget
-              != list_categories({show_count: true})
+            #side-nav
+                if site.categories.length
+                    .side-widget
+                        .widget-title #{ __('categories') }
+                        .widget
+                            != list_categories({show_count: true})
 
-        if site.tags.length
-          .side-widget
-            .widget-title #{ __('tags') }
-            .widget
-              != list_tags({show_count: true})
+                if site.tags.length
+                    .side-widget
+                        .widget-title #{ __('tags') }
+                        .widget
+                            != list_tags({show_count: true})
 
-        .side-widget
-          .widget-title #{ __('archives') }
-          .widget
-            != list_archives({show_count: true})
+                .side-widget
+                    .widget-title #{ __('archives') }
+                    .widget
+                        != list_archives({show_count: true})
 
-    include parts/gotopButton 
+        include parts/gotopButton 
