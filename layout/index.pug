@@ -7,7 +7,7 @@ html
             .site-title
                 != config.title
             .site-subtitle
-                != config.subtitle
+                != config.subtitle + 'subtitl'
 
         #content-wrapper
             #content
@@ -20,7 +20,8 @@ html
                                         != post.title
                                 .post-meta
                                     .post-date
-                                        != full_date(post.date)
+                                        != date(post.date)
+                                        // != full_date(post.date)
                                     .post-tag
                                         for tag in post.tags.toArray()
                                             a.nav.tag(href=url_for(tag.path))= tag.name

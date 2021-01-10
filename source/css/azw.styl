@@ -3,11 +3,11 @@
 // constants
 // 
 //////////////////////////////////////////////////////
-header-height=200px
+header-height=250px
 sider-width=300px
 content-width=800px
-base-font=16px Verdana, Geneva, sans-serif
-line-height=1.6em
+base-font=18px Verdana, Geneva, sans-serif
+line-height=1.8em
 article-padding = 10px
 font-size = 14px
 //////////////////////////////////////////////////////
@@ -15,32 +15,42 @@ font-size = 14px
 // header
 // 
 //////////////////////////////////////////////////////
-html
-    margin: 0
-
+*
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 body
-    margin: 0
     font: base-font
     line-height: line-height
     color: #303030
-
+h1,h2,h3,h4
+    padding-top: 1em
 img
     width: 100%
     height: auto
     
 #header
     height: header-height
+    background: url("images/header.png")
+    background-repeat: no-repeat
+    background-position: center
     
 .site-title
-    padding-top: 3em
+    padding-top: 2em
     text-align: center
     font-size: 40px
     font-weight: bold
+    color: whitesmoke
 
 .site-subtitle
     padding-top: 1em
     text-align: center
     font-weight: bold
+    color: whitesmoke
 
     
 .post-title
@@ -48,6 +58,8 @@ img
     font-size: 40px
     font-weight: bold
     line-height: 1.2em
+    text-align: center
+    color: whitesmoke
 
 .post-header-wrapper
     display: flex
@@ -57,6 +69,7 @@ img
         width: 90%
         .post-meta
             padding-top: 2em
+            color: whitesmoke
 
 .post-header
     padding-bottom: 2em
@@ -65,8 +78,9 @@ ul.title-menu
     display: flex
     justify-content: center
     list-style: none
-    color: dimGray
+    // color: dimGray
     li
+        color: whitesmoke
         padding: 0 1em
 
 
@@ -82,6 +96,11 @@ ul.title-menu
 #content
     width: content-width
     padding: 0.5em
+    p
+        text-indent: 2em
+        padding-bottom: 0.5em
+    blockquote
+        background: whitesmoke
 
 #side-nav
     display:none
@@ -89,7 +108,7 @@ ul.title-menu
     width: sider-width
 
 li.index
-    padding: 2em 0.5em
+    padding: 0.5em 0.5em
     list-style-type: none
     
 li.toc-item
@@ -108,7 +127,7 @@ a.nav, a.category-list-link, a.tag-list-link, a.archive-list-link, a.toc-link
 
 .post-meta
     display: flex
-    color: Gray
+    color: gray
 
 .post-date
     padding-right: 2em
@@ -170,9 +189,9 @@ nav.page-navigator
         display: inline-block
         padding: 5px 10px
         margin: 5px
-        border: solid 1px
+        //border: solid 1px
     a
-        background-color: Wheat
+        // background-color: Wheat
 
 //////////////////////////////////////////////////////
 // 
